@@ -20,5 +20,5 @@ app.post('/public/bar_chart/csv', upload.single('uploaded_file'), function (req,
 
 });
 app.listen(3000, function () {
-    console.log("die")
+    console.log("port 3000 ...")
 });
