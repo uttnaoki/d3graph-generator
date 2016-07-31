@@ -30,7 +30,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("../csv/bar_chart.csv", type, function(error, data) {
+d3.csv("../csv/data.csv", type, function(error, data) {
   if (error) throw error;
   var dkeys = d3.map(data[0]).keys();
   fkey=dkeys.shift();
