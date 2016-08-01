@@ -6,7 +6,7 @@ var multer = require('multer');
 var storage = multer.diskStorage({
     destination: 'public/csv',
     filename: function(req, file, cb) {
-        cb(null, "bar_chart.csv")
+        cb(null, "data.csv")
     }
 });
 var upload = multer({ storage: storage });
@@ -17,10 +17,14 @@ var routes = {
 
 app.get('/', routes.index.index);
 
-app.post('/public/csv', upload.single('uploaded_file'), function (req, res) {
+app.post('/public/csv/bar', upload.single('bar_chart'), function (req, res) {
     console.log(req.file);
-    req.params.tag
-    res.render('bar', { title: 'Express Sample Posted ver 0.0.1', word: req.body.word});
+    res.render('bar.jade');
+});
+
+app.post('/public/csv/circle', upload.single('circle_chart'), function (req, res) {
+    console.log(req.file);
+    res.render('circle.jade');
 });
 
 app.listen(3000, function () {
