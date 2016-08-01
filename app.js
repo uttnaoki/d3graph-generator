@@ -19,6 +19,7 @@ app.get('/', routes.index.index);
 
 app.post('/public/csv', upload.single('uploaded_file'), function (req, res) {
     console.log(req.file);
+    req.params.tag
     res.render('bar', { title: 'Express Sample Posted ver 0.0.1', word: req.body.word});
 });
 

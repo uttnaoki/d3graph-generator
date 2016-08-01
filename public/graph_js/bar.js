@@ -29,7 +29,7 @@ var svg = d3.select("body").append("svg")
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+filename = database.get
 d3.csv("../csv/bar_chart.csv", type, function(error, data) {
   if (error) throw error;
   var dkeys = d3.map(data[0]).keys();
