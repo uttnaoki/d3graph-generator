@@ -17,7 +17,11 @@ var routes = {
 
 app.get('/', routes.index.index);
 
-app.post('/public/csv', upload.single('uploaded_file'), function (req, res) {
+app.post('/public/csv/bar', upload.single('bar_chart'), function (req, res) {
+    console.log(req.file);
+    res.render('bar.jade');
+});
+app.post('/public/csv/circle', upload.single('circle_chart'), function (req, res) {
     console.log(req.file);
     res.render('circle.jade');
 });
