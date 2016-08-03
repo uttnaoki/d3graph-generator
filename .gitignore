@@ -1,6 +1,7 @@
 ## Directory-based project format:
 .idea/
 
+test*
 *.zip
 # Gradle:
 .idea/gradle.xml

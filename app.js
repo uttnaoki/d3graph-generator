@@ -6,7 +6,7 @@ var multer = require('multer');
 var storage = multer.diskStorage({
     destination: 'public/csv',
     filename: function(req, file, cb) {
-        cb(null, file.fieldname + "csv")
+        cb(null, file.fieldname + ".csv")
     }
 });
 var upload = multer({ storage: storage });
