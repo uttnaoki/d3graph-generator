@@ -1,7 +1,9 @@
 ## Directory-based project format:
 .idea/
 
+/node_modules/*
 test*
+*.db
 *.zip
 # Gradle:
 .idea/gradle.xml
