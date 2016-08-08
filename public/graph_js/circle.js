@@ -1,3 +1,5 @@
+var source = $('#viewer').data('csv');
+
 var ButtonArea = 1000;
 var margin = {
   top: 30,
@@ -31,8 +33,9 @@ var svg = d3.select("body")
   .append("g")
 var fkey,ckey;
 
-d3.csv("../../csv/circle_chart.csv", type, function(error, source) {
-  if (error) throw error;
+(function render() {
+
+  source = d3.csv.parse(source);
   var dkeys = d3.map(source[0]).keys();
   fkey = dkeys.shift();
   ckey = dkeys[0];
@@ -109,6 +112,7 @@ d3.csv("../../csv/circle_chart.csv", type, function(error, source) {
         fill: "rgb(0,200,80)",
         opacity: 0.5
       })
+      .style("cursor", "pointer")
       .on("click",function(d){
         ckey=d;
         update();
@@ -129,10 +133,12 @@ d3.csv("../../csv/circle_chart.csv", type, function(error, source) {
       .text(function(d){
         return d;
       })
+      .style("cursor", "pointer")
       .on("click",function(d){
         ckey=d;
+        update();
       })
-});
+})()
 
 function type(d) {
   var dkeys = d3.map(d).keys();
