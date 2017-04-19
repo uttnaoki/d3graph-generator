@@ -48,7 +48,7 @@ function insert_uploaded(data) {
         db.insert_id_map(last_id, 'guest1')
     });
 }
-
-app.listen(3000, function () {
-    console.log("port 3000 ...")
+port = process.env.PORT||8000;
+app.listen(port, function () {
+    console.log(port, "...")
 });
