@@ -3,8 +3,9 @@
 /**
  * Module dependencies.
  */
-
-var app = require('../app');
+var express = require('express');
+var app     = express();
+// var app = require('../app');
 var debug = require('debug')('express_sample:server');
 var http = require('http');
 
@@ -13,7 +14,9 @@ var http = require('http');
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+// app.set('view engine', 'jade');
 app.set('port', port);
+module.exports = app;
 
 /**
  * Create HTTP server.
