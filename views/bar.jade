@@ -2,11 +2,9 @@ doctype html
 html(lang="ja")
   head
     meta(charset="utf-8")
+    title Bar Chart
   body
     div#plot
-    span#tooltip
-      span#dpp
-    style(src="../../stylesheets/bar.css")
-    script(src="../../plugin/d3.v3.min.js")
-    script(src="../../plugin/jquery-1.11.1.min.js")
-    script(src="../../graph_js/bar.js", data-csv=value, id='viewer')
+    script(src="/plugin/d3.v3.min.js")
+    script(src="/plugin/jquery-1.11.1.min.js")
+    script(src="/graph_js/bar.js", data-csv=value, id='viewer')

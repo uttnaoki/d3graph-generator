@@ -27,7 +27,7 @@ var yAxis = d3.svg.axis()
   .orient("left")
   //.ticks(10);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#plot").append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -65,31 +65,11 @@ var svg = d3.select("body").append("svg")
       .attr("fill", function(d, i) {
         return color(i);
       })
-      .on("mouseover", function(d) {
-        d3.select("#dpp")
-            .text(d[ckey])
-        d3.select("#tooltip")
-            .style({
-              "visibility": "visible",
-              "background-color": "green"
-            })
-      })
-      .on("mousemove", function(d) {
-        return d3.select("#tooltip")
-            .style("top", (event.pageY - 20) + "px")
-            .style("left", (event.pageX + 10) + "px");
-      })
-      .on("mouseout", function() {
-        d3.select("#tooltip")
-            .style("visibility", "hidden")
-      })
 
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
-
-
 
 //Y軸
   svg.append("g")
