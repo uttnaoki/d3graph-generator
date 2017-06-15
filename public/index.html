@@ -1,8 +1,32 @@
-<form method="post" enctype="multipart/form-data" action="/virtual/bar">
-	<input type="file" name="bar_chart">
-	<input type="submit">
-</form>
-<form method="post" enctype="multipart/form-data" action="/virtual/circle">
-	<input type="file" name="circle_chart">
-	<input type="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3グラフ作成ページ</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container" style="width: 600px; padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px;">
+		<form method="post" enctype="multipart/form-data" action="/virtual/bar">
+			<div style="display:inline-flex">
+				<img border="0" src="/images/barchart.PNG" width="250" height="250">
+				<div style="margin: 20px">
+					<form><input type="file" style="margin: 10px;" name="bar_chart"></form>
+					<input type="submit" style="margin: 10px;">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="container" style="width: 600px; padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px;">
+		<form method="post" enctype="multipart/form-data" action="/virtual/circle">
+			<div style="display:inline-flex">
+				<img border="0" src="/images/circlechart.PNG" width="250" height="230">
+				<div style="margin: 20px">
+					<form><input type="file" style="margin: 10px;" name="circle_chart"></form>
+					<input type="submit" style="margin: 10px;">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
